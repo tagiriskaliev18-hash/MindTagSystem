@@ -1,0 +1,41 @@
+name: MindKit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.10", "3.12"]
+        extras: ["", "full"]
+        exclude:
+          - os: windows-latest
+            python: "3.10"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Установка
+        shell: bash
+        run: |
+          if [ "${{ matrix.extras }}" = "full" ]; then pip install ".[full]"; else pip install .; fi
+      - name: Тесты
+        run: python -m unittest discover -s tests -v
+      - name: Командная строка
+        shell: bash
+        env:
+          MINDKIT_HOME: ${{ runner.temp }}/mk
+          MINDKIT_NOTIFY: "off"
+        run: |
+          mindkit --version
+          mindkit status
+          mindkit store list
+          mindkit shortcuts list
+          mindkit design css > /dev/null

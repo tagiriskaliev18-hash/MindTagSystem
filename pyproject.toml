@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mindkit"
+dynamic = ["version"]
+description = "MindKit — общие службы экосистемы MindTagSystem: связка ключей, MindLink (буфер, Handoff, MindDrop), поиск, быстрые команды, Mind Store"
+readme = "docs/MINDKIT.md"
+requires-python = ">=3.10"
+authors = [{ name = "Тагир Искалиев" }]
+license = { text = "MIT" }
+
+[project.optional-dependencies]
+# Шифрование MindLink и системное хранилище ключей
+full = ["cryptography>=41", "keyring>=24"]
+
+[project.scripts]
+mindkit = "mindkit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/tagiriskaliev18-hash/MindTagSystem"
+
+[tool.setuptools]
+packages = ["mindkit"]
+
+[tool.setuptools.package-data]
+mindkit = ["data/*.json"]
+
+[tool.setuptools.dynamic]
+version = { attr = "mindkit.__version__" }

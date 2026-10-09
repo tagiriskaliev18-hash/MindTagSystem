@@ -8,6 +8,24 @@
   },
   "philosophy": "Максимально комфортная система для программистов, которую можно встроить в любое устройство: ноутбук, компьютер, планшет, телефон.",
   "hub": "https://github.com/tagiriskaliev18-hash/MindTagSystem",
+  "services": {
+    "package": "mindkit",
+    "install": "pip install \"mindkit[full] @ git+https://github.com/tagiriskaliev18-hash/MindTagSystem\"",
+    "docs": "https://github.com/tagiriskaliev18-hash/MindTagSystem/blob/main/docs/MINDKIT.md",
+    "features": [
+      "keychain",
+      "config",
+      "link.clipboard",
+      "link.handoff",
+      "link.drop",
+      "notify",
+      "search",
+      "assistant",
+      "shortcuts",
+      "store",
+      "design"
+    ]
+  },
   "layers": [
     {
       "id": "platform",
@@ -48,7 +66,12 @@
         "GitHub Actions"
       ],
       "visibility": "public",
-      "status": "1.0, ISO собирается в GitHub Actions"
+      "status": "1.0, ISO собирается в GitHub Actions",
+      "app": {
+        "kind": "os",
+        "get": "https://github.com/tagiriskaliev18-hash/AisktagOS/actions",
+        "note": "ISO собирается в GitHub Actions; ставится на компьютер как ОС"
+      }
     },
     {
       "id": "mind-ide",
@@ -65,7 +88,19 @@
         "http.server + SSE"
       ],
       "visibility": "public",
-      "status": "работает на Windows, интеграция в AIsktagOS в ветке claude/mind-multimodel-agent"
+      "status": "работает на Windows, интеграция в AIsktagOS в ветке claude/mind-multimodel-agent",
+      "app": {
+        "kind": "app",
+        "platforms": [
+          "windows",
+          "linux"
+        ],
+        "install": [
+          "{python} -m venv .venv",
+          "{venv_pip} install PyQt6 PyQt6-WebEngine"
+        ],
+        "run": "{venv_python} launch-studio.py"
+      }
     },
     {
       "id": "itis-browser",
@@ -81,7 +116,19 @@
         "QtWebEngine"
       ],
       "visibility": "public",
-      "status": "рабочий прототип"
+      "status": "рабочий прототип",
+      "app": {
+        "kind": "app",
+        "platforms": [
+          "windows",
+          "linux"
+        ],
+        "install": [
+          "{python} -m venv .venv",
+          "{venv_pip} install PyQt6 PyQt6-WebEngine requests"
+        ],
+        "run": "{venv_python} main.py"
+      }
     },
     {
       "id": "multimodel-agent",
@@ -98,7 +145,22 @@
         "SSE"
       ],
       "visibility": "public",
-      "status": "работает, Docker-образ"
+      "status": "работает, Docker-образ",
+      "app": {
+        "kind": "service",
+        "platforms": [
+          "windows",
+          "linux"
+        ],
+        "requires": [
+          "docker"
+        ],
+        "install": [
+          "docker compose build"
+        ],
+        "run": "docker compose up -d",
+        "url": "http://127.0.0.1:8000"
+      }
     },
     {
       "id": "antigravity-claude-bridge",
@@ -114,7 +176,16 @@
         "PowerShell"
       ],
       "visibility": "public",
-      "status": "используется ежедневно"
+      "status": "используется ежедневно",
+      "app": {
+        "kind": "tool",
+        "platforms": [
+          "windows"
+        ],
+        "install": [
+          "powershell -ExecutionPolicy Bypass -File scripts/install.ps1"
+        ]
+      }
     },
     {
       "id": "qwen14b-coder-dev",
@@ -130,7 +201,18 @@
         "HTML"
       ],
       "visibility": "public",
-      "status": "работает"
+      "status": "работает",
+      "app": {
+        "kind": "model",
+        "platforms": [
+          "windows",
+          "linux"
+        ],
+        "requires": [
+          "ollama"
+        ],
+        "note": "Локальная модель для Ollama, инструкция в README проекта"
+      }
     },
     {
       "id": "filehub-ai",
@@ -149,7 +231,22 @@
         "Tailwind"
       ],
       "visibility": "public",
-      "status": "MVP, размещается на Render"
+      "status": "MVP, размещается на Render",
+      "app": {
+        "kind": "service",
+        "platforms": [
+          "windows",
+          "linux"
+        ],
+        "requires": [
+          "node"
+        ],
+        "install": [
+          "npm install"
+        ],
+        "run": "npm run dev",
+        "url": "http://localhost:5173"
+      }
     },
     {
       "id": "sortapp",
@@ -164,7 +261,19 @@
         "ExcelJS"
       ],
       "visibility": "private",
-      "status": "в работе, размещается на Render"
+      "status": "в работе, размещается на Render",
+      "app": {
+        "kind": "service",
+        "platforms": [
+          "windows",
+          "linux"
+        ],
+        "requires": [
+          "node"
+        ],
+        "run": "node server.js",
+        "note": "Закрытый репозиторий: нужен доступ на GitHub"
+      }
     },
     {
       "id": "medical-ai-assistant",
@@ -181,7 +290,14 @@
         "JavaScript"
       ],
       "visibility": "public",
-      "status": "работает, GitHub Pages"
+      "status": "работает, GitHub Pages",
+      "app": {
+        "kind": "web",
+        "platforms": [
+          "web"
+        ],
+        "note": "Работает на GitHub Pages, ставить не нужно"
+      }
     }
   ]
 }
