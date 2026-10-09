@@ -1,0 +1,118 @@
+{
+  "$comment": "Единый реестр экосистемы MindTagSystem. Источник правды для README всех проектов: при добавлении проекта правьте сначала этот файл.",
+  "name": "MindTagSystem",
+  "author": {
+    "name": "Тагир Искалиев",
+    "github": "tagiriskaliev18-hash",
+    "url": "https://github.com/tagiriskaliev18-hash"
+  },
+  "philosophy": "Максимально комфортная система для программистов, которую можно встроить в любое устройство: ноутбук, компьютер, планшет, телефон.",
+  "hub": "https://github.com/tagiriskaliev18-hash/MindTagSystem",
+  "layers": [
+    { "id": "platform", "title": "Платформа", "summary": "Операционная система, на которой живёт всё остальное" },
+    { "id": "devtools", "title": "Инструменты разработчика", "summary": "Где программист пишет код и работает с вебом" },
+    { "id": "ai-core", "title": "ИИ-ядро", "summary": "Модели, шлюзы и мосты между ИИ-агентами" },
+    { "id": "apps", "title": "Приложения", "summary": "Готовые продукты для людей и компаний" }
+  ],
+  "projects": [
+    {
+      "id": "aisktagos",
+      "name": "AIsktagOS",
+      "repo": "tagiriskaliev18-hash/AisktagOS",
+      "layer": "platform",
+      "role": "Операционная система экосистемы",
+      "summary": "Linux-дистрибутив для разработчиков в стиле macOS на базе Ubuntu 26.04 LTS и KDE Plasma 6.6: работает на любом x86-64 с любой видеокартой, инструменты программиста из коробки.",
+      "stack": ["Bash", "debootstrap", "Calamares", "KDE Plasma", "Python (PyQt)", "GitHub Actions"],
+      "visibility": "public",
+      "status": "1.0, ISO собирается в GitHub Actions"
+    },
+    {
+      "id": "mind-ide",
+      "name": "Mind IDE",
+      "repo": "tagiriskaliev18-hash/Mind-IDE",
+      "layer": "devtools",
+      "role": "Собственная среда разработки экосистемы",
+      "summary": "IDE, которую Тагир разрабатывает сам; центральное рабочее место программиста в MindTagSystem.",
+      "stack": [],
+      "visibility": "уточняется",
+      "status": "репозиторий создаётся"
+    },
+    {
+      "id": "itis-browser",
+      "name": "ITIS Browser",
+      "repo": "tagiriskaliev18-hash/ITIS-browser",
+      "layer": "devtools",
+      "role": "Браузер экосистемы со встроенным ИИ-агентом",
+      "summary": "Десктопный браузер на PyQt6 и Chromium (QtWebEngine) с боковой панелью ИИ-агента, который читает страницу и сам кликает и прокручивает её, плюс корпоративный фильтр сайтов.",
+      "stack": ["Python", "PyQt6", "QtWebEngine"],
+      "visibility": "public",
+      "status": "рабочий прототип"
+    },
+    {
+      "id": "multimodel-agent",
+      "name": "AI Duo (multimodel-agent)",
+      "repo": "tagiriskaliev18-hash/multimodel-agent",
+      "layer": "ai-core",
+      "role": "Единый ИИ-шлюз экосистемы",
+      "summary": "FastAPI-шлюз с OpenAI-совместимым API /v1/chat/completions поверх OpenAI, Nous Hermes, Groq, Ollama и Pollinations, с автопереключением провайдеров, AI Studio Chat, 3D Neural HUD и сервисным порталом.",
+      "stack": ["Python", "FastAPI", "Docker", "SSE"],
+      "visibility": "public",
+      "status": "работает, Docker-образ"
+    },
+    {
+      "id": "antigravity-claude-bridge",
+      "name": "Antigravity ↔ Claude Code Bridge",
+      "repo": "tagiriskaliev18-hash/antigravity-claude-bridge",
+      "layer": "ai-core",
+      "role": "Мост между ИИ-агентами разработчика",
+      "summary": "MCP-серверы, правила и навыки, которые связывают Google Antigravity (Gemini), Claude Code и пул внешних моделей (DeepSeek, GPT, Qwen, GLM) с экономией токенов и параллельными субагентами.",
+      "stack": ["Python", "MCP", "PowerShell"],
+      "visibility": "public",
+      "status": "используется ежедневно"
+    },
+    {
+      "id": "qwen14b-coder-dev",
+      "name": "Qwen 14B Coder Dev",
+      "repo": "tagiriskaliev18-hash/qwen14b-coder-dev",
+      "layer": "ai-core",
+      "role": "Локальная модель для программирования",
+      "summary": "Полностью офлайн-ассистент программиста на Qwen 2.5 Coder 14B в Ollama с веб-чатом и запуском в один клик, оптимизирован под видеокарты с 8 ГБ.",
+      "stack": ["Ollama", "Python", "HTML"],
+      "visibility": "public",
+      "status": "работает"
+    },
+    {
+      "id": "filehub-ai",
+      "name": "FileHub AI",
+      "repo": "tagiriskaliev18-hash/filehub-ai",
+      "layer": "apps",
+      "role": "Облачное хранилище с ИИ-агентом",
+      "summary": "Корпоративная веб-платформа: файловый менеджер, ИИ-агент, который правит DOCX, PPTX и XLSX по тексту, сжатие до нужного размера и конвертация форматов.",
+      "stack": ["TypeScript", "Express", "Prisma", "React", "Vite", "Tailwind"],
+      "visibility": "public",
+      "status": "MVP, размещается на Render"
+    },
+    {
+      "id": "sortapp",
+      "name": "SortApp (анализатор логов)",
+      "repo": "tagiriskaliev18-hash/sortapp",
+      "layer": "apps",
+      "role": "Анализ доступа к сетевым папкам",
+      "summary": "Веб-сервис, который разбирает журналы доступа Synology к сетевым папкам и строит отчёты Excel с ролями администратора и работника.",
+      "stack": ["Node.js", "ExcelJS"],
+      "visibility": "private",
+      "status": "в работе, размещается на Render"
+    },
+    {
+      "id": "medical-ai-assistant",
+      "name": "ИИ Доктор (medical-ai-assistant)",
+      "repo": "tagiriskaliev18-hash/medical-ai-assistant",
+      "layer": "apps",
+      "role": "Клинический ассистент врача",
+      "summary": "Офлайн-PWA и FastAPI-бэкенд для врача приёмного покоя: клинические калькуляторы, интерпретация анализов, проверка лекарственных взаимодействий, протоколы SOAP и триаж.",
+      "stack": ["Python", "FastAPI", "PWA", "JavaScript"],
+      "visibility": "public",
+      "status": "работает, GitHub Pages"
+    }
+  ]
+}
