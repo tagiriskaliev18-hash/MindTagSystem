@@ -64,6 +64,10 @@ flowchart LR
 | qwen14b-coder-dev | в обратную сторону: шлюз видит модель через Ollama | `OLLAMA_BASE_URL=http://127.0.0.1:11434/v1` в шлюзе |
 | ITIS Browser | адрес и ключ сейчас заданы в `main.py` | вынести в настройки и указать шлюз (в плане) |
 
+### Маршрутизатор Mind
+
+У [Mind IDE](https://github.com/tagiriskaliev18-hash/Mind-IDE) свой маршрутизатор моделей `aisktag_ai.py`: режим «Авто», переключение при сбоях, консилиум и кэш, провайдеры от локальной llama.cpp до Claude. Сейчас он работает напрямую с провайдерами, параллельно шлюзу AI Duo; объединить их каталоги моделей и ключей — задача этапа 2 дорожной карты.
+
 ### Мост агентов
 
 [antigravity-claude-bridge](https://github.com/tagiriskaliev18-hash/antigravity-claude-bridge) — это слой для разработки самой экосистемы. Antigravity (Gemini) планирует и делит задачу, Claude Code делает ревью и реализацию, дешёвые модели из пула пишут черновики. Расширенная версия того же `claude_bridge.py` лежит в `multimodel-agent/tools`: там к нему добавлены реестры агентов, навыков и моделей шлюза.
@@ -76,6 +80,7 @@ flowchart LR
 
 ## Связи, которые уже работают
 
+- Mind IDE в одном чате связывает собственные модели, Claude Code и Antigravity. Интеграция в AIsktagOS как системного ИИ (Meta+A, плазмоид) готова в ветке `claude/mind-multimodel-agent` и ждёт слияния.
 - AIsktagOS ставит Ollama и Claude Code — базу для ИИ-ядра.
 - AI Duo понимает Ollama, значит видит локальную модель из qwen14b-coder-dev.
 - MCP-мост `claude_bridge.py` есть в antigravity-claude-bridge и в расширенном виде в multimodel-agent.

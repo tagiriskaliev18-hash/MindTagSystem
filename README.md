@@ -11,7 +11,7 @@
 | Слой | Проект | Что делает | Статус |
 |---|---|---|---|
 | Платформа | **[AIsktagOS](https://github.com/tagiriskaliev18-hash/AisktagOS)** | Операционная система для разработчиков в стиле macOS на базе Ubuntu 26.04 LTS. Любое x86-64 железо и любая видеокарта, инструменты программиста из коробки | 1.0, ISO в Releases |
-| Инструменты | **[Mind IDE](https://github.com/tagiriskaliev18-hash/Mind-IDE)** | Собственная среда разработки, центральное рабочее место программиста | репозиторий создаётся |
+| Инструменты | **[Mind IDE](https://github.com/tagiriskaliev18-hash/Mind-IDE)** | Собственная ИИ-среда разработки: один чат с моделями, Claude Code и Antigravity, автоматический выбор модели под задачу | работает на Windows, встраивается в AIsktagOS |
 | Инструменты | **[ITIS Browser](https://github.com/tagiriskaliev18-hash/ITIS-browser)** | Браузер на Chromium с ИИ-агентом, который читает страницу и сам кликает и прокручивает её | прототип |
 | ИИ-ядро | **[AI Duo / multimodel-agent](https://github.com/tagiriskaliev18-hash/multimodel-agent)** | Единый ИИ-шлюз с OpenAI-совместимым API поверх OpenAI, Hermes, Groq, Ollama и Pollinations | работает, Docker |
 | ИИ-ядро | **[antigravity-claude-bridge](https://github.com/tagiriskaliev18-hash/antigravity-claude-bridge)** | MCP-мост между Antigravity (Gemini), Claude Code и пулом внешних моделей | используется ежедневно |
