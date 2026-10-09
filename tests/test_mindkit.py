@@ -305,7 +305,7 @@ class LinkTest(Base):
         big.write_bytes(os.urandom(200_000))
         self.assertEqual(link.drop(big), {"Ноутбук": "ok"})
         self.assertEqual((self.peer_home / "MindDrop" / "отчёт.bin").read_bytes(), big.read_bytes())
-        hist = [json.loads(x) for x in (self.peer_home / "data" / "notifications.jsonl").read_text().splitlines()]
+        hist = [json.loads(x) for x in (self.peer_home / "data" / "notifications.jsonl").read_text(encoding="utf-8").splitlines()]
         self.assertEqual(hist[0]["title"], "Сборка")
         self.assertTrue(any(h["title"].startswith("MindDrop") for h in hist))
 
