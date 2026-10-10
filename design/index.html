@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mind UI</title>
+<link rel="stylesheet" href="mind-ui.css">
+<style>
+body{margin:0;padding:32px 16px;background:var(--mt-bg0);color:var(--mt-text);font-family:var(--mt-font-ui)}
+main{max-width:1080px;margin:0 auto}
+h1{font-size:44px;margin:0 0 8px} p{color:var(--mt-text2)}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:24px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:12px}
+.cell{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;border-radius:16px;background:var(--mt-surface);
+box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 4px 14px rgba(0,0,0,.35);font-size:12px;color:var(--mt-text2)}
+.cell .mi{width:30px;height:30px}
+.card{padding:24px;width:260px} .orb{width:72px;height:72px}
+</style></head><body><main>
+<h1 class="mt-gradient-text">Mind UI</h1>
+<p>Единый стиль MindTagSystem: иконки Mind вместо эмодзи, переливающийся фиолетово-синий градиент, 3D-вставки и bounce. Собрано <code>mindkit design build</code>.</p>
+<div class="row">
+<button class="mt-btn"><i class="mi mi-send"></i>Отправить</button>
+<button class="mt-btn mt-btn-ghost"><i class="mi mi-sparkles"></i>Спросить Mind</button>
+<button class="mt-icon-btn" title="Поиск"><i class="mi mi-search"></i></button>
+<button class="mt-icon-btn" title="Настройки"><i class="mi mi-settings"></i></button>
+<div class="mt-orb orb mt-bounce-in"></div>
+</div>
+<div class="row">
+<div class="mt-card mt-3d card" data-mt-tilt><h3 class="mt-gradient-text">3D-карточка</h3><p>Наклоняется за курсором.</p></div>
+<div class="mt-card mt-gradient-border card mt-bounce-in"><h3>Градиентная рамка</h3><p>Рамка переливается.</p></div>
+</div>
+<h2>Иконки Mind (84)</h2>
+<div class="grid"><div class="cell mt-bounce"><i class="mi mi-mind"></i><span>mind</span></div>
+<div class="cell mt-bounce"><i class="mi mi-inbox"></i><span>inbox</span></div>
+<div class="cell mt-bounce"><i class="mi mi-bolt"></i><span>bolt</span></div>
+<div class="cell mt-bounce"><i class="mi mi-pin"></i><span>pin</span></div>
+<div class="cell mt-bounce"><i class="mi mi-star"></i><span>star</span></div>
+<div class="cell mt-bounce"><i class="mi mi-clock"></i><span>clock</span></div>
+<div class="cell mt-bounce"><i class="mi mi-alarm"></i><span>alarm</span></div>
+<div class="cell mt-bounce"><i class="mi mi-reply"></i><span>reply</span></div>
+<div class="cell mt-bounce"><i class="mi mi-reply-all"></i><span>reply-all</span></div>
+<div class="cell mt-bounce"><i class="mi mi-forward"></i><span>forward</span></div>
+<div class="cell mt-bounce"><i class="mi mi-calendar"></i><span>calendar</span></div>
+<div class="cell mt-bounce"><i class="mi mi-edit"></i><span>edit</span></div>
+<div class="cell mt-bounce"><i class="mi mi-compose"></i><span>compose</span></div>
+<div class="cell mt-bounce"><i class="mi mi-send"></i><span>send</span></div>
+<div class="cell mt-bounce"><i class="mi mi-attach"></i><span>attach</span></div>
+<div class="cell mt-bounce"><i class="mi mi-news"></i><span>news</span></div>
+<div class="cell mt-bounce"><i class="mi mi-folder"></i><span>folder</span></div>
+<div class="cell mt-bounce"><i class="mi mi-folder-move"></i><span>folder-move</span></div>
+<div class="cell mt-bounce"><i class="mi mi-archive"></i><span>archive</span></div>
+<div class="cell mt-bounce"><i class="mi mi-alert"></i><span>alert</span></div>
+<div class="cell mt-bounce"><i class="mi mi-trash"></i><span>trash</span></div>
+<div class="cell mt-bounce"><i class="mi mi-search"></i><span>search</span></div>
+<div class="cell mt-bounce"><i class="mi mi-settings"></i><span>settings</span></div>
+<div class="cell mt-bounce"><i class="mi mi-keyboard"></i><span>keyboard</span></div>
+<div class="cell mt-bounce"><i class="mi mi-refresh"></i><span>refresh</span></div>
+<div class="cell mt-bounce"><i class="mi mi-plus"></i><span>plus</span></div>
+<div class="cell mt-bounce"><i class="mi mi-close"></i><span>close</span></div>
+<div class="cell mt-bounce"><i class="mi mi-minimize"></i><span>minimize</span></div>
+<div class="cell mt-bounce"><i class="mi mi-maximize"></i><span>maximize</span></div>
+<div class="cell mt-bounce"><i class="mi mi-back"></i><span>back</span></div>
+<div class="cell mt-bounce"><i class="mi mi-chevron-right"></i><span>chevron-right</span></div>
+<div class="cell mt-bounce"><i class="mi mi-chevron-down"></i><span>chevron-down</span></div>
+<div class="cell mt-bounce"><i class="mi mi-more"></i><span>more</span></div>
+<div class="cell mt-bounce"><i class="mi mi-menu"></i><span>menu</span></div>
+<div class="cell mt-bounce"><i class="mi mi-tag"></i><span>tag</span></div>
+<div class="cell mt-bounce"><i class="mi mi-check"></i><span>check</span></div>
+<div class="cell mt-bounce"><i class="mi mi-dot"></i><span>dot</span></div>
+<div class="cell mt-bounce"><i class="mi mi-shield"></i><span>shield</span></div>
+<div class="cell mt-bounce"><i class="mi mi-sparkles"></i><span>sparkles</span></div>
+<div class="cell mt-bounce"><i class="mi mi-template"></i><span>template</span></div>
+<div class="cell mt-bounce"><i class="mi mi-download"></i><span>download</span></div>
+<div class="cell mt-bounce"><i class="mi mi-upload"></i><span>upload</span></div>
+<div class="cell mt-bounce"><i class="mi mi-print"></i><span>print</span></div>
+<div class="cell mt-bounce"><i class="mi mi-block"></i><span>block</span></div>
+<div class="cell mt-bounce"><i class="mi mi-broom"></i><span>broom</span></div>
+<div class="cell mt-bounce"><i class="mi mi-user"></i><span>user</span></div>
+<div class="cell mt-bounce"><i class="mi mi-users"></i><span>users</span></div>
+<div class="cell mt-bounce"><i class="mi mi-mail"></i><span>mail</span></div>
+<div class="cell mt-bounce"><i class="mi mi-sun"></i><span>sun</span></div>
+<div class="cell mt-bounce"><i class="mi mi-moon"></i><span>moon</span></div>
+<div class="cell mt-bounce"><i class="mi mi-home"></i><span>home</span></div>
+<div class="cell mt-bounce"><i class="mi mi-code"></i><span>code</span></div>
+<div class="cell mt-bounce"><i class="mi mi-terminal"></i><span>terminal</span></div>
+<div class="cell mt-bounce"><i class="mi mi-chat"></i><span>chat</span></div>
+<div class="cell mt-bounce"><i class="mi mi-file"></i><span>file</span></div>
+<div class="cell mt-bounce"><i class="mi mi-image"></i><span>image</span></div>
+<div class="cell mt-bounce"><i class="mi mi-globe"></i><span>globe</span></div>
+<div class="cell mt-bounce"><i class="mi mi-lock"></i><span>lock</span></div>
+<div class="cell mt-bounce"><i class="mi mi-key"></i><span>key</span></div>
+<div class="cell mt-bounce"><i class="mi mi-link"></i><span>link</span></div>
+<div class="cell mt-bounce"><i class="mi mi-devices"></i><span>devices</span></div>
+<div class="cell mt-bounce"><i class="mi mi-bell"></i><span>bell</span></div>
+<div class="cell mt-bounce"><i class="mi mi-play"></i><span>play</span></div>
+<div class="cell mt-bounce"><i class="mi mi-stop"></i><span>stop</span></div>
+<div class="cell mt-bounce"><i class="mi mi-filter"></i><span>filter</span></div>
+<div class="cell mt-bounce"><i class="mi mi-copy"></i><span>copy</span></div>
+<div class="cell mt-bounce"><i class="mi mi-eye"></i><span>eye</span></div>
+<div class="cell mt-bounce"><i class="mi mi-grid"></i><span>grid</span></div>
+<div class="cell mt-bounce"><i class="mi mi-cpu"></i><span>cpu</span></div>
+<div class="cell mt-bounce"><i class="mi mi-bot"></i><span>bot</span></div>
+<div class="cell mt-bounce"><i class="mi mi-brain"></i><span>brain</span></div>
+<div class="cell mt-bounce"><i class="mi mi-rocket"></i><span>rocket</span></div>
+<div class="cell mt-bounce"><i class="mi mi-heart"></i><span>heart</span></div>
+<div class="cell mt-bounce"><i class="mi mi-stethoscope"></i><span>stethoscope</span></div>
+<div class="cell mt-bounce"><i class="mi mi-chart"></i><span>chart</span></div>
+<div class="cell mt-bounce"><i class="mi mi-table"></i><span>table</span></div>
+<div class="cell mt-bounce"><i class="mi mi-zap-off"></i><span>zap-off</span></div>
+<div class="cell mt-bounce"><i class="mi mi-info"></i><span>info</span></div>
+<div class="cell mt-bounce"><i class="mi mi-warning"></i><span>warning</span></div>
+<div class="cell mt-bounce"><i class="mi mi-external"></i><span>external</span></div>
+<div class="cell mt-bounce"><i class="mi mi-power"></i><span>power</span></div>
+<div class="cell mt-bounce"><i class="mi mi-wifi"></i><span>wifi</span></div>
+<div class="cell mt-bounce"><i class="mi mi-layers"></i><span>layers</span></div>
+<div class="cell mt-bounce"><i class="mi mi-store"></i><span>store</span></div></div>
+</main><script src="mind-ui.js"></script></body></html>

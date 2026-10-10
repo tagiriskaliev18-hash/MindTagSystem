@@ -15,7 +15,7 @@
 | Spotlight | **Mind Search**: приложения, команды, Handoff и файлы проектов в одном поиске (и в KRunner AIsktagOS) |
 | Siri и Команды | **Ассистент Mind** (`mindkit ask`) и **быстрые команды** |
 | App Store | **Mind Store**: все приложения экосистемы ставятся и обновляются одной командой |
-| Human Interface Guidelines | **Дизайн Aurora**: одни токены для веба и Qt |
+| Human Interface Guidelines | **Дизайн Aurora**: иконки Mind, переливающийся фиолетово-синий градиент, 3D и bounce ([DESIGN.md](docs/DESIGN.md)) |
 
 ```bash
 pip install "mindkit[full] @ git+https://github.com/tagiriskaliev18-hash/MindTagSystem"

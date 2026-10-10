@@ -119,9 +119,13 @@ mindkit store update             # git pull во всех установленн
 ## Дизайн Aurora
 
 ```bash
-mindkit design css > aurora.css   # CSS-переменные --mt-* для веб-интерфейсов
-mindkit design qss > aurora.qss   # стиль Qt для настольных программ
+mindkit design build static/mind-ui   # mind-ui.css/.js/.qss, спрайт и SVG-иконки Mind
+mindkit design css > aurora.css       # CSS: переменные --mt-*, градиент, 3D, bounce, иконки .mi-*
+mindkit design qss > aurora.qss       # стиль Qt для настольных программ
+mindkit design icon send              # одна иконка Mind в SVG
 ```
+
+Правило единого стиля (без эмодзи, иконки Mind, переливающийся фиолетово-синий градиент, 3D, bounce) — в [DESIGN.md](DESIGN.md). Для PyQt6 — модуль `mindkit.qtfx` (иконки, пружина, перелив).
 
 Источник правды — [`mindkit/data/tokens.json`](../mindkit/data/tokens.json). Те же токены лежат в Mind IDE (`overlay/usr/share/aisktagos/design/tokens.json`).
 
