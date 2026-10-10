@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import socket
 import stat
 import subprocess
@@ -242,6 +243,32 @@ class DesignTest(unittest.TestCase):
         self.assertIn("--mt-accent: #6e56cf;", css)
         self.assertIn("--mt-glass: rgba(255, 255, 255, 0.051);", css)
         self.assertIn("QPushButton", design.qss())
+        self.assertIn("qlineargradient", design.qss())
+
+    def test_mind_style(self):
+        # Правило: иконки Mind, переливающийся градиент, bounce; без эмодзи
+        css = design.css()
+        self.assertIn("@keyframes mt-flow", css)
+        self.assertIn("@keyframes mt-bounce-in", css)
+        self.assertIn(".mi-inbox {", css)
+        self.assertIn("prefers-reduced-motion", css)
+        names = design.icons()
+        self.assertGreaterEqual(len(names), 80)
+        for n in ("mind", "inbox", "send", "sparkles", "settings"):
+            self.assertIn(n, names)
+        svg = design.icon_svg("send")
+        self.assertIn("linearGradient", svg)
+        self.assertIn("<symbol id='mi-send'", design.sprite())
+        emoji = re.compile("[\U0001F300-\U0001FAFF\u2600-\u27BF]")
+        for text in (css, design.js(), design.sprite()):
+            self.assertIsNone(emoji.search(text))
+
+    def test_build(self):
+        with tempfile.TemporaryDirectory() as d:
+            files = design.build(d)
+            self.assertTrue((Path(d) / "mind-ui.css").exists())
+            self.assertTrue((Path(d) / "icons" / "mind.svg").exists())
+            self.assertEqual(len(files), 4 + len(design.icons()))
 
 
 class LinkTest(Base):

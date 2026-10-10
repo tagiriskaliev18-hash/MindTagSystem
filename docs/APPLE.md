@@ -18,7 +18,7 @@ Apple сильна не отдельными программами, а тем, 
 | **Siri** | Ассистент Mind из любой программы и терминала | MindKit → шлюз AI Duo → Ollama | `mindkit ask "как откатить коммит?"`, `git diff \| mindkit ask "найди ошибки"` |
 | **Команды (Shortcuts)** | Быстрые команды: цепочки шагов в JSON (буфер, ИИ, уведомления, Handoff, команды оболочки) | MindKit | `mindkit shortcuts run "Объяснить код"` |
 | **App Store** | Mind Store: каталог приложений экосистемы из `ecosystem.json`, установка и обновление в один клик | MindKit, Центр AIsktagOS, Mind Search | `mindkit store list`, `mindkit store install itis-browser` |
-| **Human Interface Guidelines** | Дизайн Aurora: одни токены цветов, радиусов и шрифтов для веба и Qt | MindKit (`mindkit/data/tokens.json`) | `mindkit design css`, `mindkit design qss` |
+| **Human Interface Guidelines** | Дизайн Aurora: одни токены, иконки Mind, переливающийся градиент, 3D и bounce для веба и Qt ([DESIGN.md](DESIGN.md)) | MindKit (`mindkit/data/tokens.json`) | `mindkit design build`, `mindkit.qtfx` |
 | **Настройки iCloud** | Единый файл настроек экосистемы вместо `.env` в каждом проекте | MindKit | `mindkit config set gateway.url http://127.0.0.1:8000/v1` |
 | **Time Machine** | Снимки Btrfs + Timeshift перед каждым обновлением | AIsktagOS | уже в системе |
 | **Xcode** | Mind IDE: своя среда разработки с ИИ | Mind IDE | — |

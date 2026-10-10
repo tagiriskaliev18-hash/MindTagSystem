@@ -15,7 +15,7 @@
 | Spotlight | **Mind Search**: приложения, команды, Handoff и файлы проектов в одном поиске (и в KRunner AIsktagOS) |
 | Siri и Команды | **Ассистент Mind** (`mindkit ask`) и **быстрые команды** |
 | App Store | **Mind Store**: все приложения экосистемы ставятся и обновляются одной командой |
-| Human Interface Guidelines | **Дизайн Aurora**: одни токены для веба и Qt |
+| Human Interface Guidelines | **Дизайн Aurora**: иконки Mind, переливающийся фиолетово-синий градиент, 3D и bounce ([DESIGN.md](docs/DESIGN.md)) |
 
 ```bash
 pip install "mindkit[full] @ git+https://github.com/tagiriskaliev18-hash/MindTagSystem"
@@ -34,6 +34,7 @@ mindkit status
 | ИИ-ядро | **[AI Duo / multimodel-agent](https://github.com/tagiriskaliev18-hash/multimodel-agent)** | Единый ИИ-шлюз с OpenAI-совместимым API поверх OpenAI, Hermes, Groq, Ollama и Pollinations | работает, Docker |
 | ИИ-ядро | **[antigravity-claude-bridge](https://github.com/tagiriskaliev18-hash/antigravity-claude-bridge)** | MCP-мост между Antigravity (Gemini), Claude Code и пулом внешних моделей | используется ежедневно |
 | ИИ-ядро | **[qwen14b-coder-dev](https://github.com/tagiriskaliev18-hash/qwen14b-coder-dev)** | Локальная офлайн-модель для программирования (Qwen 2.5 Coder 14B в Ollama) с веб-чатом | работает |
+| Приложения | **[MindMail](https://github.com/tagiriskaliev18-hash/MindMail)** | Своя почта: Gmail, Mail.ru, Яндекс, Outlook и любой IMAP в одних входящих, плюс лучшее из каждой службы — вкладки, отмена и отложенная отправка, отписка в один клик, ИИ-помощник Mind | 0.1, работает |
 | Приложения | **[FileHub AI](https://github.com/tagiriskaliev18-hash/filehub-ai)** | Хранилище файлов с ИИ-агентом, который правит Word, PowerPoint и Excel по тексту, плюс сжатие и конвертация | MVP |
 | Приложения | **[SortApp](https://github.com/tagiriskaliev18-hash/sortapp)** | Анализатор журналов доступа к сетевым папкам Synology с отчётами Excel (закрытый репозиторий) | в работе |
 | Приложения | **[ИИ Доктор](https://github.com/tagiriskaliev18-hash/medical-ai-assistant)** | Офлайн-ассистент врача приёмного покоя: калькуляторы, анализы, лекарства, протоколы SOAP | работает |
@@ -57,6 +58,7 @@ flowchart TB
         QWEN["qwen14b-coder-dev<br/>локальная модель"]
     end
     subgraph L4["Приложения"]
+        MM["MindMail"]
         FH["FileHub AI"]
         SA["SortApp"]
         MED["ИИ Доктор"]
@@ -70,6 +72,7 @@ flowchart TB
     BR -. "OpenAI-совместимый API" .-> GW
     FH -. "LOCALAI_BASE_URL" .-> GW
     MED -. "LLM_BASE_URL" .-> GW
+    MM -. "ИИ-помощник" .-> GW
 ```
 
 Четыре слоя, снизу вверх:

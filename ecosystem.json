@@ -215,6 +215,31 @@
       }
     },
     {
+      "id": "mindmail",
+      "name": "MindMail",
+      "repo": "tagiriskaliev18-hash/MindMail",
+      "layer": "apps",
+      "role": "Почта экосистемы",
+      "tagline": "Все почтовые ящики в одном и лучшее из Gmail, Mail.ru, Outlook и Яндекс Почты",
+      "summary": "Почтовый клиент экосистемы: Gmail, Mail.ru, Яндекс, Outlook, iCloud и любой IMAP/SMTP в одних входящих. Умные вкладки, «Важное», цепочки, отмена и отложенная отправка, «отложить письмо», правила, шаблоны, менеджер рассылок с отпиской в один клик, напоминания об ответе, поиск с операторами Gmail, блокировка трекеров и ИИ-помощник Mind. Работает офлайн, только стандартная библиотека Python.",
+      "stack": [
+        "Python 3.10+ (только стандартная библиотека)",
+        "IMAP/SMTP",
+        "SQLite FTS5",
+        "HTML/JS без сборки"
+      ],
+      "visibility": "public",
+      "status": "0.1: работает на Windows и Linux",
+      "app": {
+        "kind": "app",
+        "platforms": [
+          "windows",
+          "linux"
+        ],
+        "run": "{python} start.py"
+      }
+    },
+    {
       "id": "filehub-ai",
       "name": "FileHub AI",
       "repo": "tagiriskaliev18-hash/filehub-ai",

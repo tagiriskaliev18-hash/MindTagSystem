@@ -39,3 +39,4 @@ jobs:
           mindkit store list
           mindkit shortcuts list
           mindkit design css > /dev/null
+          mindkit design build "${{ runner.temp }}/mind-ui"
